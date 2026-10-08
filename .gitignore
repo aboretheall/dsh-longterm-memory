@@ -1,0 +1,27 @@
+# 依赖与构建产物
+node_modules/
+*.tgz
+dist/
+release/
+*.bundle
+coverage/
+__pycache__/
+*.py[cod]
+
+# DSH 本地状态
+.dsh/
+*.local
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 记忆数据：不要把真实项目的 T1-T4 内容提交上来
+T1-交接文件夹/
+T2-全日志记录文件夹/
+T3-日志分级整理文件夹/
+T4-项目目录文件夹/
+.dsh-longterm.json
