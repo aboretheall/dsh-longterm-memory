@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      # 零运行时依赖，因此没有 install 步骤
+      - name: Run tests
+        run: node --test "tests/*.test.mjs"
+      - name: Check packaged files
+        run: npm pack --dry-run
+      - name: Syntax-check every shipped entry
+        run: |
+          node --check index.js
+          node --check client.js
