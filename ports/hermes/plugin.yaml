@@ -1,0 +1,17 @@
+# Hermes Agent 插件清单
+# 安装位置（任选一种）：
+#   hermes plugins install <本仓库路径或 owner/repo>   ← 推荐，自动处理放置与启用
+#   手动：<HERMES_HOME>/plugins/longterm-memory/     （Windows 上是 %LOCALAPPDATA%\hermes\plugins\，Unix 是 ~/.hermes/plugins/）
+# 启用：在 config.yaml 里
+#   plugins:
+#     enabled:
+#       - longterm-memory
+#   （也可以用 `hermes plugins enable longterm-memory`）
+#
+# 依赖：Node.js >= 20 在 PATH 上（本插件复用共享的 Node 实现，避免 Python 侧再写一套检索逻辑）。
+name: longterm-memory
+version: "2.0"
+description: 超长期项目的分层记忆系统（T1交接 / T2全日志 / T3分类整理 / T4项目）：开新会话不失忆，也不烧无关 token。与 Claude Code / Codex / DSH 共用同一份记忆。
+author: aboretheall
+homepage: https://github.com/aboretheall/dsh-longterm-memory
+license: MIT

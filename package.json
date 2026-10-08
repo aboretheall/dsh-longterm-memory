@@ -1,0 +1,90 @@
+{
+  "name": "dsh-longterm-memory",
+  "version": "0.5.3",
+  "description": "DSH 长期项目记忆（T1-T4）：会话冷启动交接、问题分级日志、低 token 精准检索。T1-T4 long-term project memory for DeepSeek Harness: handoff cold-start, tiered issue logs, precise retrieval.",
+  "type": "module",
+  "license": "MIT",
+  "author": "aboretheall",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/en.json",
+    "locale/zh.json",
+    "icon.svg",
+    "docs",
+    "ports",
+    "skills",
+    "examples",
+    "README.md",
+    "README.en.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "long-term-memory",
+    "memory",
+    "handoff",
+    "context",
+    "agent-memory",
+    "token-saving"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aboretheall/dsh-longterm-memory.git"
+  },
+  "homepage": "https://github.com/aboretheall/dsh-longterm-memory#readme",
+  "bugs": {
+    "url": "https://github.com/aboretheall/dsh-longterm-memory/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "pack:dry": "npm pack --dry-run",
+    "check": "node --check index.js && node --check client.js && node --test \"tests/*.test.mjs\""
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    },
+    "engines": {
+      "dsh": ">=0.1.7"
+    }
+  }
+}

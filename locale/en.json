@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Long-term Project Memory",
+    "description": "T1-T4 memory system: handoff cold-start, tiered issue logs, precise retrieval. Low-token long-term projects that survive new sessions."
+  }
+}

@@ -1,0 +1,30 @@
+# 提交到插件市场用的目录条目 / catalog entry for the plugin market
+#
+# dshmarket 的目录数据来自 awesome-dsh-plugin（每天 CI 刷新），因此上架 = 到那边提一个 PR。
+# 仓库：https://github.com/awesome-dsh-plugin/awesome-dsh-plugin
+#
+# 下面的字段是按该目录的既有条目风格写的；提交前请对照仓库当时的字段说明（schema/示例）微调，
+# 尤其是 `title` / `description` 的键名与 `npm` 字段是否需要。
+#
+# 另外两条也不需要 PR、但建议一起做：
+#   1. 发一个 GitHub Release（把 npm pack 出来的 tgz 作为资产），市场可据此走预构建安装路径；
+#   2. 发布到 npm（npm publish --access public），市场优先按 npm 包 + 镜像提供安装。
+
+- name: dsh-longterm-memory
+  repo: https://github.com/aboretheall/dsh-longterm-memory
+  npm: dsh-longterm-memory
+  title:
+    zh: 长期项目记忆
+    en: Long-term Project Memory
+  description:
+    zh: T1-T4 记忆系统：会话冷启动交接、问题分级日志、低 token 精准检索，跨会话不失忆。
+    en: T1-T4 memory system - handoff cold-start, tiered issue logs, precise retrieval across sessions.
+  keywords:
+    - memory
+    - handoff
+    - long-term
+    - context
+    - token-saving
+  license: MIT
+  dsh:
+    engines: '>=0.1.7'

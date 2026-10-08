@@ -1,0 +1,18 @@
+# 追加到 ~/.codex/config.toml（全局），或 <项目>/.codex/config.toml（项目级）
+#
+# 注意：路径要用正斜杠或双反斜杠。先把 <REPO> 换成你克隆下来的仓库绝对路径，
+# 例如 D:/你的路径/dsh-longterm-memory/ports/mcp/server.mjs
+#
+# 注册后 Codex 会把 memory_* 工具和内置工具一起暴露给模型（重启 Codex 生效）。
+
+[mcp_servers.longterm_memory]
+command = "node"
+args = ["<REPO>/ports/mcp/server.mjs"]
+startup_timeout_sec = 20
+
+# 可选：会话 cwd 不在项目里时，用环境变量固定记忆根目录
+# [mcp_servers.longterm_memory.env]
+# LTM_PROJECT_ROOT = "D:/your/project"
+
+# 可选：给这台机器上的所有 Codex 会话都带上长期记忆约定（配合下面的 AGENTS.md 片段）
+# 若只想对某些项目生效，改把片段写进项目的 AGENTS.md。

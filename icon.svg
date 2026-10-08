@@ -1,0 +1,24 @@
+// dsh-longterm-memory 图标 / plugin card icon.
+// T1 是「当前交接层」（顶部高亮），下面 T2-T4 依次变暗 —— 越往下越冷。
+// T1 is the hot handoff layer on top; T2-T4 get progressively colder.
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Long-term project memory">
+  <defs>
+    <linearGradient id="t1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6f8cff"/>
+      <stop offset="100%" stop-color="#3f5fe0"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1424"/>
+  <!-- T1 交接层（热） -->
+  <rect x="12" y="13" width="40" height="10" rx="4" fill="url(#t1)"/>
+  <circle cx="18" cy="18" r="2" fill="#ffffff" opacity="0.9"/>
+  <!-- T2 全日志（温） -->
+  <rect x="12" y="27" width="40" height="8" rx="3.5" fill="#5b6b96" opacity="0.85"/>
+  <!-- T3 分级整理（凉） -->
+  <rect x="12" y="39" width="40" height="8" rx="3.5" fill="#42506f" opacity="0.85"/>
+  <!-- T4 项目目录（冷） -->
+  <rect x="12" y="51" width="40" height="6" rx="3" fill="#2d374f" opacity="0.9"/>
+  <!-- 交接箭头：T1 只在会话开头被读一次 -->
+  <path d="M52 18h6" stroke="#6f8cff" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M55.5 15.5 58.5 18l-3 2.5" fill="none" stroke="#6f8cff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
